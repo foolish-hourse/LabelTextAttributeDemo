@@ -54,23 +54,22 @@
         cell.textLabel.font = [UIFont systemFontOfSize:15];
     }
     NSString *leftPriceStr = @"¥ 12.5";
-//    NSString *leftPrice = [NSString stringWithFormat:@"¥%@",leftPriceStr];
     if (indexPath.row == 0) {
         cell.textLabel.text = leftPriceStr;
         [cell.textLabel setLabelWithDelLine];//设置label带有删除线
     }else if (indexPath.row == 1) {
         cell.textLabel.text = leftPriceStr;
         [cell.textLabel setLabelWithUnderLine];//设置label带有下划线
-    }else if (indexPath.row == 2) {//设置label文字的指定位置的文字颜色
+    }else if (indexPath.row == 2) {//设置label文字的指定位置的文字颜色 设置第一个字符颜色为绿色
         [cell.textLabel setLabelText:leftPriceStr Color:[UIColor greenColor] Range:NSMakeRange(0, 1)];
-    }else if (indexPath.row == 3) {//设置label指定位置的文字颜色(可设置多个位置)
+    }else if (indexPath.row == 3) {//设置label指定位置的文字颜色(可设置多个位置) 设置(2,2)范围内文字颜色为绿色 (5,1)范围内文字颜色为红色
          [cell.textLabel setLabelText:leftPriceStr ColorArr:@[[UIColor greenColor],[UIColor redColor]] RangeArr:@[[NSValue valueWithRange:NSMakeRange(2, 2)],[NSValue valueWithRange:NSMakeRange(5, 1)]]];
-    }else if (indexPath.row == 4) {//设置label指定位置的文字颜色
+    }else if (indexPath.row == 4) {//设置label指定位置的文字颜色 设置第一个字符字体为17，颜色为黄色
         [cell.textLabel setLabelText:leftPriceStr Color:[UIColor yellowColor] Font:[UIFont systemFontOfSize:17] Range:NSMakeRange(0, 1)];
-    }else if (indexPath.row == 5) {//设置label指定位置的文字颜色及行间距
+    }else if (indexPath.row == 5) {//设置label指定位置的文字颜色及行间距 设置前20个字的字体大小为20，整体行间距为5
         cell.textLabel.numberOfLines = 0;
         [cell.textLabel setLabelText:@"我是一段测试的文字而已哈哈哈哈哈哈哈哈哈我是一段测试的文字而已哈哈哈哈哈哈哈哈哈" Color:[UIColor redColor] Font:[UIFont systemFontOfSize:20] Range:NSMakeRange(0, 20) LineSpaceWithSpace:5];
-    }else {//改变行间距
+    }else {//改变行间距 行间距设置为5
         cell.textLabel.numberOfLines = 0;
         cell.textLabel.text = @"我是一段测试的文字而已哈哈哈哈哈哈哈哈哈我是一段测试的文字而已哈哈哈哈哈哈哈哈哈";
         [cell.textLabel changeLineSpaceWithSpace:5];
